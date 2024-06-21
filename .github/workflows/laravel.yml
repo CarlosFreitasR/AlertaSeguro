@@ -27,9 +27,9 @@ jobs:
     - name: Create Database
       run: |
         mkdir -p database
-        touch database/database.sqlite
+        touch database/alertaSeguro.sql
     - name: Execute tests (Unit and Feature tests) via PHPUnit/Pest
       env:
         DB_CONNECTION: mysql
-        DB_DATABASE: alertaSeguro
+        DB_DATABASE: database/alertaSeguro.sql
       run: php artisan test
